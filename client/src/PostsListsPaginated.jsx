@@ -16,19 +16,23 @@ export default function PostsListsPaginated() {
 
     return (
         <>
-            <h1>Posts Lists Paginated</h1>
+            <h1 className='text-center my-5 font-medium text-4xl'>Posts List Paginated</h1>
             <br/>
-            <small>{ isPreviousData && 'Previous Data' }</small>
-                <ul>
+            <div className='flex justify-center'>
+                <ol className='w-1/2'>
                     {data.posts.map(post => (
-                        <li key={post.id}>{post.title}</li>
+                        <li className='font-medium text-center hover:bg-white bg-amber-400 border-2 border-indigo-400 rounded-lg p-2 m-4 cursor-pointer' 
+                             key={post.id}>
+                            {post.title}
+                        </li>
                     ))}
-                </ul>
-            <div>
-                 {data.previousPage && <button onClick={() => setPage(data.previousPage)}>
+                </ol>
+            </div>
+            <div className='flex justify-center'>
+                 {data.previousPage && <button className='py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"' onClick={() => setPage(data.previousPage)}>
                     Previous
                  </button>}
-                 {data.nextPage && <button onClick={() => setPage(data.nextPage)}>
+                 {data.nextPage && <button className='py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"' onClick={() => setPage(data.nextPage)}>
                     Next
                  </button>}
             </div>    
