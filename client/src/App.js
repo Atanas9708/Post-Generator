@@ -2,6 +2,8 @@ import Post from './Post';
 import PostsLists from './PostsList';
 import CreatePost from './CreatePost';
 import { useState } from 'react';
+import PostsListsPaginated from './PostsListsPagenated';
+import PostsListsInfinite from './PostsListsInfinite';
 
 
 function App() {
@@ -17,6 +19,12 @@ function App() {
       </button>
       <button onClick={() => setCurrentPage(<CreatePost setCurrentPage={setCurrentPage}/>)}>
         Create Post
+      </button>
+      <button onClick={() => setCurrentPage(<PostsListsPaginated />)}>
+        Posts List Paginated
+      </button>
+      <button onClick={() => setCurrentPage(<PostsListsInfinite />)}>
+        Posts Lists Infinite
       </button>
       {currentPage}
     </div>
